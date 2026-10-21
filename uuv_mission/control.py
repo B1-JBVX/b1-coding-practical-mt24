@@ -1,5 +1,4 @@
-class PDController:
-    # A class is used to that the controller can retain its previous error between time steps
+class PDController: # A class is used so that the controller can retain its previous error between time steps
 
     def __init__(self):
         # Initialize PD controller gains and previous error each time a new PDController object is created
@@ -7,7 +6,7 @@ class PDController:
         self.kd = 0.6
         self.previous_error = 0.0
 
-    def __call__(self, reference, observation):     #makes the controller object callable like a function
+    def __call__(self, reference, observation):     # The __call__ method makes the controller object callable like a function
         # Calculate the error and derivative based on the reference and observation
         error = reference - observation
         derivative = error - self.previous_error
